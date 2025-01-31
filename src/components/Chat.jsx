@@ -24,7 +24,7 @@ const ChatComponent = (props) => {
           className={`w-full my-1 ${
             role === "user"
               ? "bg-slate-200 rounded-bl-xl rounded-e-xl"
-              : "bg-sky-500 text-white rounded-br-xl rounded-s-xl"
+              : "bg-indigo-500 text-white rounded-br-xl rounded-s-xl"
           } px-4 py-4 shadow`}
         >
           <p

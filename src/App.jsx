@@ -40,12 +40,12 @@ function App() {
             <ChatComponent messages={messages} />
           </div>
           <form
-            className="flex justify-center gap-1"
+            className="flex justify-center gap-0"
             onSubmit={handleChat}
             autoComplete="off"
           >
             <input
-              className="w-full outline-sky-600 border border-sky-500 rounded p-2"
+              className="w-full outline-none border border-2 border-indigo-600 rounded-s-lg py-4 px-4"
               rows={1}
               name="question"
               value={inputMessage}
@@ -53,7 +53,7 @@ function App() {
               placeholder="Bertanya disini ..."
             />
             <button
-              className="flex items-center gap-1 bg-sky-500 text-white rounded px-2 cursor-pointer font-bold hover:bg-sky-600"
+              className="flex items-center gap-1 bg-indigo-500 text-white rounded-e-lg px-4 cursor-pointer font-bold hover:bg-indigo-600"
               type="submit"
             >
               Kirim <MdSend className="w-4 h-4" />
