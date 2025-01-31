@@ -5,13 +5,36 @@ const ChatComponent = (props) => {
     return (
       <div
         key={index}
-        className={`w-3/4 my-1 ${
-          role === "user"
-            ? "bg-slate-200 p-2 self-start"
-            : "bg-sky-500 text-white"
-        } p-2 rounded self-end`}
+        className={`flex gap-1 w-3/4 ${
+          role === "user" ? "self-start" : "self-end"
+        } `}
       >
-        <p>{message.content}</p>
+        <img
+          className={`mt-1 w-10 h-10 object-cover rounded-full border border-slate-200 shadow ${
+            role === "user" ? "order-0" : "order-1"
+          }`}
+          src={`${
+            role === "user"
+              ? "https://i.pravatar.cc/300"
+              : "https://img.cryptorank.io/coins/deep_seek1737979405027.png"
+          }`}
+          alt="Avatar"
+        />
+        <div
+          className={`w-full my-1 ${
+            role === "user"
+              ? "bg-slate-200 rounded-bl-xl rounded-e-xl"
+              : "bg-sky-500 text-white rounded-br-xl rounded-s-xl"
+          } px-4 py-4 shadow`}
+        >
+          <p
+            dangerouslySetInnerHTML={{
+              __html: message.content
+                .replace(/<think><\/think>/g, "<br/>")
+                .replace(/\*\*(.*?)\*\*/g, "<span class='font-bold'>$1</span>"),
+            }}
+          />
+        </div>
       </div>
     );
   });

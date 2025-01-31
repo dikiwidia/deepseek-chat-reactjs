@@ -15,7 +15,7 @@ function App() {
     setInputMessage("");
     const deepseek = new Ollama({ host: apiUrl });
     const response = await deepseek.chat({
-      model: "deepseek-r1:1.5b",
+      model: "deepseek-r1:7b",
       messages: [{ role: "user", content: question }],
     });
     setMessages([...newMessages, response.message]);
