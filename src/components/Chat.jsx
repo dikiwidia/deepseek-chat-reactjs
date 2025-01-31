@@ -21,7 +21,7 @@ const ChatComponent = (props) => {
           alt="Avatar"
         />
         <div
-          className={`w-full my-1 ${
+          className={`w-full my-1 font-medium ${
             role === "user"
               ? "bg-slate-200 rounded-br-xl rounded-s-xl"
               : "bg-indigo-500 text-white rounded-bl-xl rounded-e-xl"
@@ -31,7 +31,10 @@ const ChatComponent = (props) => {
             dangerouslySetInnerHTML={{
               __html: message.content
                 .replace(/<think><\/think>/g, "<br/>")
-                .replace(/\*\*(.*?)\*\*/g, "<span class='font-bold'>$1</span>"),
+                .replace(
+                  /\*\*(.*?)\*\*/g,
+                  "<br/><span class='font-bold'>$1</span><br/>"
+                ),
             }}
           />
         </div>
