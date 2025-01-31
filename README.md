@@ -18,3 +18,7 @@ VITE_API_URL="http://127.0.0.1:5000" # Replace with your API URL
 ## Screenshot
 
 ![image](https://github.com/dikiwidia/deepseek-chat-reactjs/blob/main/src/assets/screenshot.png)
+
+## Credits
+
+Thanks to [Dea Afrizal](https://www.youtube.com/@deaafrizal) for API Deepseek support.
