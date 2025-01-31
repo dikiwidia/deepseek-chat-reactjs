@@ -6,12 +6,12 @@ const ChatComponent = (props) => {
       <div
         key={index}
         className={`flex gap-1 w-3/4 ${
-          role === "user" ? "self-start" : "self-end"
+          role === "user" ? "self-end" : "self-start"
         } `}
       >
         <img
           className={`mt-1 w-10 h-10 object-cover rounded-full border border-slate-200 shadow ${
-            role === "user" ? "order-0" : "order-1"
+            role === "user" ? "order-1" : "order-0"
           }`}
           src={`${
             role === "user"
@@ -23,9 +23,9 @@ const ChatComponent = (props) => {
         <div
           className={`w-full my-1 ${
             role === "user"
-              ? "bg-slate-200 rounded-bl-xl rounded-e-xl"
-              : "bg-indigo-500 text-white rounded-br-xl rounded-s-xl"
-          } px-4 py-4 shadow`}
+              ? "bg-slate-200 rounded-br-xl rounded-s-xl"
+              : "bg-indigo-500 text-white rounded-bl-xl rounded-e-xl"
+          } px-4 py-4`}
         >
           <p
             dangerouslySetInnerHTML={{
