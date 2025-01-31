@@ -14,3 +14,7 @@ create a `.env` file with the following variables:
 VITE_APP_NAME="React Chat Deepseek"
 VITE_API_URL="http://127.0.0.1:5000" # Replace with your API URL
 ```
+
+## Screenshot
+
+![image](https://github.com/dikiwidia/deepseek-chat-reactjs/blob/main/src/assets/screenshot.png)
