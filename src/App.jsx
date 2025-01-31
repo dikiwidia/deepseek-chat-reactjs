@@ -17,7 +17,7 @@ function App() {
     const question = event.target.question.value;
     const newMessages = [...messages, { role: "user", content: question }];
     setMessages(newMessages);
-    setMessages([...newMessages, { role: "assistant", content: ". . . ." }]);
+    // setMessages([...newMessages, { role: "assistant", content: ". . . ." }]);
     setInputMessage("");
     const deepseek = new Ollama({ host: apiUrl });
     const response = await deepseek.chat({
