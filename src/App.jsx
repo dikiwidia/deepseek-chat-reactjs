@@ -1,7 +1,7 @@
-import { Ollama } from "ollama";
 import { useState } from "react";
 import { MdSend } from "react-icons/md";
 import ChatComponent from "./components/Chat";
+import { Ollama } from "ollama/browser";
 
 function App() {
   const [inputMessage, setInputMessage] = useState("");
