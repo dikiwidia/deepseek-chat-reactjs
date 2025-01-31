@@ -45,7 +45,7 @@ function App() {
             autoComplete="off"
           >
             <input
-              className="w-full outline-none border border-2 border-indigo-600 rounded-s-lg py-4 px-4"
+              className="w-full outline-none border-2 border-indigo-600 rounded-s-lg py-4 px-4"
               rows={1}
               name="question"
               value={inputMessage}
