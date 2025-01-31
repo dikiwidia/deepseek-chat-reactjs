@@ -15,7 +15,7 @@ const ChatComponent = (props) => {
           }`}
           src={`${
             role === "user"
-              ? "https://i.pravatar.cc/300"
+              ? "https://avatars.githubusercontent.com/u/8361706?v=4"
               : "https://img.cryptorank.io/coins/deep_seek1737979405027.png"
           }`}
           alt="Avatar"

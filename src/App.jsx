@@ -5,13 +5,22 @@ import ChatComponent from "./components/Chat";
 
 function App() {
   const [inputMessage, setInputMessage] = useState("");
-  const [messages, setMessages] = useState([]);
+  const [messages, setMessages] = useState([
+    {
+      role: "assistant",
+      content: "Halo perkenalkan nama Saya DeepSeek, Ayo mulai ngobrol...",
+    },
+  ]);
   const apiUrl = import.meta.env.VITE_API_URL;
   const handleChat = async (event) => {
     event.preventDefault();
     const question = event.target.question.value;
     const newMessages = [...messages, { role: "user", content: question }];
     setMessages(newMessages);
+    setMessages([
+      ...newMessages,
+      { role: "assistant", content: "DeepSeek sedang memproses ..." },
+    ]);
     setInputMessage("");
     const deepseek = new Ollama({ host: apiUrl });
     const response = await deepseek.chat({
@@ -22,20 +31,25 @@ function App() {
   };
   return (
     <div className="bg-slate-100 min-h-screen py-1 text-sm">
-      <h1 className="text-center text-2xl font-bold my-2">DeepSeek Chatbot</h1>
-      <p className="text-center text-sm my-2">
-        Ini adalah chatbot DeepSeek R1 yang dibuat dengan React JS dan
-        TailwindCSS api diambil dari akun YouTube:{" "}
-        <a
-          href="https://www.youtube.com/@deaafrizal"
-          className="text-sky-500"
-          target="_blank"
-        >
-          https://www.youtube.com/@deaafrizal
-        </a>
-      </p>
-      <div className="container mx-auto p-2 rounded bg-white">
-        <div className="min-h-screen h-auto flex-col w-full md:w-2/3 mx-auto mb-2">
+      <div className="py-10">
+        <h1 className="text-center text-2xl font-bold my-2">
+          DeepSeek Chatbot
+        </h1>
+        <p className="text-center text-sm my-2">
+          Ini adalah chatbot DeepSeek R1 yang dibuat dengan React JS dan
+          TailwindCSS <br />
+          API DeepSeek diperoleh dari akun YouTube: <br />
+          <a
+            href="https://www.youtube.com/@deaafrizal"
+            className="text-sky-500"
+            target="_blank"
+          >
+            https://www.youtube.com/@deaafrizal
+          </a>
+        </p>
+      </div>
+      <div className="container md:w-2/3 mx-auto p-2 rounded-lg bg-white">
+        <div className="min-h-80 h-auto flex-col w-full mx-auto mb-2">
           <div className="flex flex-col gap-1 flex-1 min-h-72 w-full py-2">
             <ChatComponent messages={messages} />
           </div>
